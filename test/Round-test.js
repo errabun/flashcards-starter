@@ -29,85 +29,74 @@ describe('Round', function() {
       'string'
     );
 
-    deck = new Deck([card1, card2, card3])
-  })
+    deck = new Deck([card1, card2, card3]);
+    round = new Round(deck);
+  });
 
   it('should be a function', function() {
-    const round = new Round();
 
     expect(Round).to.be.a('function');
   });
 
   it('should be an instance of a Round', function() {
-    const round = new Round();
 
     expect(round).to.be.an.instanceof(Round);
   });
 
-  it('should take a array of cards as a Deck', function() {
-    const card1 = new Card (10, 'Which iteration method returns the first array element where the callback function returns true', ['find()', 'filter()', 'forEach()'], 'find()');
-    const card2 = new Card (1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
-    const card3 = new Card (7, 'What data type is wrapped in quoties?', ['string', 'array', 'function'], 'string');
+  it('should take in a deck of cards to play from', function() {
 
-    const cards = [card1, card2, card3]
-    const deck = new Deck(cards);
-    const round = new Round(deck);
-
-    expect(round.deck).to.be.a('array');
+    expect(round.deck).to.be.an.instanceof(Deck);
   });
 
-  // it('should be able to return the current card being played', function() {
-  //   const card1 = new Card (10, 'Which iteration method returns the first array element where the callback function returns true', ['find()', 'filter()', 'forEach()'], 'find()');
-  //   const card2 = new Card (1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
-  //   const card3 = new Card (7, 'What data type is wrapped in quoties?', ['string', 'array', 'function'], 'string');
-  //
-  //   const cards = [card1, card2, card3]
-  //   const deck = new Deck(cards);
-  // });
-
   it('should start round with 0 turns', function() {
-    const card1 = new Card (10, 'Which iteration method returns the first array element where the callback function returns true', ['find()', 'filter()', 'forEach()'], 'find()');
-    const card2 = new Card (1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
-
-    const cards = [card1, card2];
-    const deck = new Deck(cards);
-    const round = new Round(deck);
 
     expect(round.turns).to.equal(0);
   });
 
   it('should track incorrect guesses in a separate array', function() {
-    const card1 = new Card (10, 'Which iteration method returns the first array element where the callback function returns true', ['find()', 'filter()', 'forEach()'], 'find()');
-    const card2 = new Card (1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
 
-    const cards = [card1, card2];
-    const deck = new Deck(cards);
-    const round = new Round(deck);
-
-    expect(round.incorrectGuesses).to.equal([]);
+    expect(round.incorrectGuesses).to.deep.equal([]);
   });
 
-  it('should allow user to take a turn', function() {
-    const card1 = new Card (10, 'Which iteration method returns the first array element where the callback function returns true', ['find()', 'filter()', 'forEach()'], 'find()');
-    const card2 = new Card (1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+  it('user should be able to return the current card to the deck', function() {
 
-    const cards = [card1, card2];
-    const deck = new Deck(cards);
-    const round = new Round(deck);
-    const turn1 = new Turn('array', card2);
+    expect(round.returnCurrentCard).to.equal()
+  });
 
-    round.takeTurn(turn1);
+  describe('should allow user to take a turn', function() {
 
-    expect(round.turns).to.equal(1);
-    expect(round.incorrectGuesses).to.equal([1]);
-    expect(card.currentCard).to.equal(deck.card2);
+    it('should increment the round turn count for each turn', function() {
 
-    const turn2 = new Turn('object', card2);
+      round.takeTurn('Any guess');
+      round.takeTurn('Another random guess');
 
-    round.takeTurn(turn2);
+      expect(round.turns).to.equal(2);
+    });
 
-    expect(round.turns).to.equal(2);
-    expect(round.incorrectGuesses).to.equal([1]);
-
+    it('should be able to notify user if they answered correctly', function() {
+      
+    })
   })
+// })
+//
+// describe('should allow player to attempt to answer', function() {
+//
+//   it('should allow user to take a turn', function() {
+// })
+//
+//
+//     round.takeTurn(turn1);
+//
+//     expect(round.turns).to.equal(1);
+//     expect(round.incorrectGuesses).to.equal([1]);
+//     expect(card.currentCard).to.equal(deck.card2);
+//
+//     const turn2 = new Turn('object', card2);
+//
+//     round.takeTurn(turn2);
+//
+//     expect(round.turns).to.equal(2);
+//     expect(round.incorrectGuesses).to.equal([1]);
+//
+//   })
 })
