@@ -1,16 +1,24 @@
 class Turn {
-  constructor(userGuess, cardInst) {
+  constructor(userGuess, card) {
     this.userGuess = userGuess;
-    this.currentCard = cardInst;
+    this.currentCard = card;
   }
 
-  returnGuess = () => this.userGuess;
+  returnGuess() {
+    return this.userGuess;
+  }
 
-  returnCard = () => this.currentCard;
+  returnCard() {
+    return this.currentCard;
+  }
 
-  evaluateGuess = () => this.currentCard.correctAnswer === this.userGuess;
+  evaluateGuess() {
+    return this.currentCard.correctAnswer === this.userGuess;
+  }
 
-  giveFeedback = () => this.evaluateGuess() ? 'Correct!' : 'Incorrect!';
+  giveFeedback() {
+    return this.evaluateGuess() ? 'Correct!' : 'Incorrect!';
+  }
 }
 
 module.exports = Turn;
