@@ -60,43 +60,55 @@ describe('Round', function() {
 
   it('user should be able to return the current card to the deck', function() {
 
-    expect(round.returnCurrentCard).to.equal()
+    expect(round.returnCurrentCard()).to.equal(card1);
+
   });
 
-  describe('should allow user to take a turn', function() {
-
-    it('should increment the round turn count for each turn', function() {
-
-      round.takeTurn('Any guess');
-      round.takeTurn('Another random guess');
-
-      expect(round.turns).to.equal(2);
-    });
-
-    it('should be able to notify user if they answered correctly', function() {
-      
-    })
+  it('should show card that corresponds with number of turns', function() {
+    round.turns = 1;
+    expect(round.returnCurrentCard()).to.equal(card2);
+    round.turns = 2;
+    expect(round.returnCurrentCard()).to.equal(card3);
   })
-// })
-//
-// describe('should allow player to attempt to answer', function() {
-//
-//   it('should allow user to take a turn', function() {
-// })
-//
-//
-//     round.takeTurn(turn1);
-//
-//     expect(round.turns).to.equal(1);
-//     expect(round.incorrectGuesses).to.equal([1]);
-//     expect(card.currentCard).to.equal(deck.card2);
-//
-//     const turn2 = new Turn('object', card2);
-//
-//     round.takeTurn(turn2);
-//
-//     expect(round.turns).to.equal(2);
-//     expect(round.incorrectGuesses).to.equal([1]);
-//
-//   })
+
+  it('should increment the round turn count for each turn', function() {
+    expect(round.turns).to.equal(0);
+
+    round.takeTurn('Any guess');
+    round.takeTurn('Another random guess');
+
+    expect(round.turns).to.equal(2);
+  });
+
+  it('should be able to notify user if they answered correctly', function() {
+
+    expect(round.takeTurn('find()')).to.equal('Correct!');
+    expect(round.takeTurn('array')).to.equal('Incorrect!');
+  });
+
+  it('should keep track of which cards were incorrectly guessed', function() {
+    expect(round.incorrectGuesses).to.deep.equal([]);
+
+    expect(round.takeTurn('forEach()')).to.equal('Incorrect!');
+
+    expect(round.incorrectGuesses).to.deep.equal([10]);
+
+    expect(round.takeTurn('function')).to.equal('Incorrect!');
+
+    expect(round.incorrectGuesses).to.deep.equal([10, 1]);
+  });
+
+  it('should be able to calculate the percentage of correct guesses', function() {
+    round.takeTurn('find()');
+
+    expect(round.calculatePercentageCorrect()).to.equal(100);
+
+    round.takeTurn('array');
+
+    expect(round.calculatePercentageCorrect()).to.equal(50);
+
+    round.takeTurn('function');
+
+    expect(round.calculatePercentageCorrect()).to.equal(33);
+  })
 })
