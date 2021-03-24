@@ -4,17 +4,13 @@ class Turn {
     this.currentCard = cardInst;
   }
 
-  returnGuess = () => { return this.userGuess };
+  returnGuess = () => this.userGuess;
 
-  returnCard = () => { return this.currentCard };
+  returnCard = () => this.currentCard;
 
-  evaluateGuess = () => {
-    return this.currentCard.correctAnswer === this.userGuess;
-  };
+  evaluateGuess = () => this.currentCard.correctAnswer === this.userGuess;
 
-  giveFeedback = () => {
-    return this.evaluateGuess() ? 'Correct!' : 'Incorrect!';
-  }; 
+  giveFeedback = () => this.evaluateGuess() ? 'Correct!' : 'Incorrect!';
 }
 
 module.exports = Turn;
