@@ -7,6 +7,30 @@ const Deck = require('../src/Deck');
 const Turn = require('../src/Turn');
 
 describe('Round', function() {
+  let card1, card2, card3, deck, round;
+
+  beforeEach(function() {
+    card1 = new Card (
+      10,
+      'Which iteration method returns the first array element where the callback function returns true',
+      ['find()', 'filter()', 'forEach()'],
+      'find()'
+    );
+    card2 = new Card (
+      1,
+      'What allows you to define a set of related information using key-value pairs?',
+      ['object', 'array', 'function'],
+      'object'
+    );
+    card3 = new Card (
+      7,
+      'What data type is wrapped in quoties?',
+      ['string', 'array', 'function'],
+      'string'
+    );
+
+    deck = new Deck([card1, card2, card3])
+  })
 
   it('should be a function', function() {
     const round = new Round();
