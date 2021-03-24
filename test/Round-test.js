@@ -110,5 +110,13 @@ describe('Round', function() {
     round.takeTurn('function');
 
     expect(round.calculatePercentageCorrect()).to.equal(33);
+  });
+
+  it('should show message telling user percentage of questions correctly answered at end of round', function() {
+    round.takeTurn('find()');
+    round.takeTurn('array');
+    round.takeTurn('function');
+
+    expect(round.endRound()).to.equal(`** Round over! ** You answered ${round.calculatePercentageCorrect()} of the questions correctly!`)
   })
 })
