@@ -116,6 +116,6 @@ describe('Round', function() {
     round.takeTurn('array');
     round.takeTurn('function');
 
-    expect(round.endRound()).to.equal(`** Round over! ** You answered ${round.calculatePercentageCorrect()} of the questions correctly!`)
+    expect(round.endRound()).to.equal(`** Round over! ** You answered ${round.calculatePercentageCorrect()}% of the questions correctly!`)
   })
 })
