@@ -1,79 +1,48 @@
 # FlashCards Starter Kit
+A [Mod2 Project](https://frontend.turing.io/projects/flash-cards.html) by [Eric Rabun](https://github.com/errabun)
 
-## Fork This Repo
+## Overview
 
-On the top right corner of this page, click the **Fork** button.
+Remember back in grade school when you were forced to make multiplication flash cards to memorize the entire multiplication table?  It can bring back some nightmarish thoughts.  If you're anything like me, somehow those cards would constantly go missing, or get damaged and it would be the perfect excuse to not have to study!  
+
+Worry no more!  The FlashCards Starter Kit is here to help!  
+
+This small program runs in the console (terminal) and run a round of multiple choice flashcards. By default, it stores 30 'cards' over Javascript iterator methods and Object Oriented Programming, but could be modified for any flash-cards you'd like.
 
 ## Setup
 
-Clone down the forked repo (from your GitHub). Since you don't want to name your project "flashcards-starter", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments):
+Clone down the repo (from your GitHub). If the name "flashcards-starter" doesn't represent what your program is going to entail, you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments):
 
 ```bash
 git clone [remote-address] [what you want to name the repo]
 ```
 
-Once you have cloned the repo, change into the directory and install the library dependencies. Run:
+Lots of the functionality of this game is built-in, however, after you clone your repo and open it in the text editor of your choice, open your terminal and run the command `npm install`.  This will make sure you have all the proper communications happening between all the different features of this project.
 
-```bash
-npm install
-```
+After this, open your console and navigate to the root directory of the program. Run the command `node index.js` to start a game. To create your own set of Cards to test, head over to the `/src/data.js` file and update the each object with your own questions, possible solutions and correct answer(s).
 
-To verify that it is setup correctly, run `npm test` in your terminal. You should have 5 pending tests in your `Card` test file that show up.
+## Playing
 
-Running `node index.js` from the root of your project should result in the following message being displayed in your terminal: 
+As previously mentioned, once you are ready to being your studying, navigate to the root directory of the repo in your command line (terminal) and run the command `node index.js`. If at any point during the game, you decide you've had enough and want to quit the program, just type `control + C` in the console.
 
-```bash
-Node server running on port 3000
-```
+Once it's running, the program should display a short greeting followed by the first card in the set. It might look like the following:
 
-*Note that you will not need to you run your server until you are instantiating your `Game` class in Iteration 3. Prior to that, you should be using TDD to drive your code. You should check the functionality of your application by running your tests via `npm test`.*
+<img width="700" alt="start terminal" src="/Users/ericrabun/turing/mod2-projects/flashcards-starter/assets/flashCards start up.png">
 
+Using the corresponding numbers associated with each possible solution, type which answer you think is correct and press `Return` to see if you have answered the question correctly.  Be careful, you only get one chance to answer correctly for each question!  Once you have submitted your answer you will be notified if you answered correctly.  
 
-## Where to Add Your Code
+<img width="700" alt="in game environment" src="/Users/ericrabun/turing/mod2-projects/flashcards-starter/assets/in gameplay.png">
 
-### JavaScript
+Finally, at the end, the program will display your percentage of question gotten right!
 
-**Create all of your feature code files in the `src` directory.**
+<img width="700" alt="end of game play" src="/Users/ericrabun/turing/mod2-projects/flashcards-starter/assets/end of game.png">
 
-We will be using the `module.exports` and `require` syntax to share code across files.
+## Challenges
 
-## How to View Your Code in Action
+One of the biggest challenges for me building out this game was the depth of the class to class interactions that was needed for each piece of this game.  Building one class and using that for the next class and making sure each method and property could be functional between the classes is something I am happy to say is getting more evident and clear in my understanding.  
 
-Once you are working through Iteration 3, you will want to start your server to test your functionality.
-In the terminal, run:
+As well, this was the first project in which I wrote all my own TDD (tests) to make sure my code was properly functioning.  While it was a little bit daunting to start, it quickly became second nature and seemed to come easily after the first class.  
 
-```bash
-node index.js
-```
+## Feedback
 
-When the game is functioning appropriately, you will be prompted for each question, have the opportunity to select an answer, and will be given feedback. You will be able to play through the entire deck of cards:
-
-![flash cards example gif](https://media.giphy.com/media/1zkb1q58eTiTH6D7wc/giphy.gif)
-
----
-
-## Test Files Organization
-
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
-
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `Round-test.js`.
-
-## Running Your Tests
-
-Run your test suite using the command:
-
-```bash
-npm test
-```
-
-The test results will output to the terminal.
-
----
-
-## Linting Your Code
-
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit - the linter is still running successfully.
-
-Your linter will look at the JavaScript files you have within the `src` directory and the `test` directory. 
-
----
+I would love to see your version of this game, or how you manipulated this game to be better in anyway!  Feel free to friend me on [GitHub](https://github.com/errabun) and let me know what you have in mind!  

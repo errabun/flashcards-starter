@@ -11,14 +11,13 @@ class Game {
   }
 
   start() {
-    console.log('Is this working?');
     let cards = prototypeQuestions.map(({ id, question, answers, correctAnswer }) => {
       return new Card(id, question, answers, correctAnswer)
     });
     let deck = new Deck(cards);
     this.currentRound = new Round(deck);
     this.printMessage(deck, this.currentRound);
-    this.printQuestion(this.currentRound); 
+    this.printQuestion(this.currentRound);
   }
 
   printMessage(deck, round) {
