@@ -9,10 +9,9 @@ const Round = require('../src/round');
 const Game = require('../src/Game')
 
 describe('Game', function() {
-  let game, cards, deck, round;
+  let cards, deck, round;
 
   beforeEach(function() {
-    game = new Game();
     cards = prototypeQuestions.map(({ id, question, answers, correctAnswer }) => {
       return new Card(id, question, answers, correctAnswer)
     })
