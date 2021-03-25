@@ -24,9 +24,11 @@ class Round {
     let perc = ((this.turns - this.incorrectGuesses.length) / this.turns) * 100;
     return Math.round(perc);
   }
-  
+
   endRound() {
-    return `** Round over! ** You answered ${this.calculatePercentageCorrect()} of the questions correctly!`
+    let message = `** Round over! ** You answered ${this.calculatePercentageCorrect()}% of the questions correctly!`
+    console.log(message);
+    return message;
   }
 }
 

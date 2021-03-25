@@ -6,14 +6,19 @@ const prototypeQuestions = data.prototypeData;
 const util = require('./util');
 
 class Game {
-  constructor() {}
+  constructor() {
+    this.currentRound;
+  }
 
   start() {
+    console.log('Is this working?');
     let cards = prototypeQuestions.map(({ id, question, answers, correctAnswer }) => {
       return new Card(id, question, answers, correctAnswer)
     });
     let deck = new Deck(cards);
     this.currentRound = new Round(deck);
+    this.printMessage(deck, this.currentRound);
+    this.printQuestion(this.currentRound); 
   }
 
   printMessage(deck, round) {
