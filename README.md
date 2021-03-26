@@ -27,15 +27,15 @@ As previously mentioned, once you are ready to being your studying, navigate to 
 
 Once it's running, the program should display a short greeting followed by the first card in the set. It might look like the following:
 
-<img width="700" alt="start terminal" src="/Users/ericrabun/turing/mod2-projects/flashcards-starter/assets/flashCards start up.png">
+<img width="700" alt="start terminal" src="https://github.com/errabun/flashcards-starter/blob/main/assets/flashCards%20start%20up.png?raw=true">
 
 Using the corresponding numbers associated with each possible solution, type which answer you think is correct and press `Return` to see if you have answered the question correctly.  Be careful, you only get one chance to answer correctly for each question!  Once you have submitted your answer you will be notified if you answered correctly.  
 
-<img width="700" alt="in game environment" src="/Users/ericrabun/turing/mod2-projects/flashcards-starter/assets/in gameplay.png">
+<img width="700" alt="in game environment" src="https://github.com/errabun/flashcards-starter/blob/main/assets/in%20gameplay.png?raw=true">
 
 Finally, at the end, the program will display your percentage of question gotten right!
 
-<img width="700" alt="end of game play" src="/Users/ericrabun/turing/mod2-projects/flashcards-starter/assets/end of game.png">
+<img width="700" alt="end of game play" src="https://github.com/errabun/flashcards-starter/blob/main/assets/end%20of%20game.png?raw=true">
 
 ## Demo
 
