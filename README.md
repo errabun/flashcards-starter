@@ -37,6 +37,12 @@ Finally, at the end, the program will display your percentage of question gotten
 
 <img width="700" alt="end of game play" src="/Users/ericrabun/turing/mod2-projects/flashcards-starter/assets/end of game.png">
 
+## Demo
+
+Here is a quick demo of what the game environment will look like!
+
+![live start demo](https://media.giphy.com/media/NAXRyADHAiL6TfyFcP/giphy.gif)
+
 ## Challenges
 
 One of the biggest challenges for me building out this game was the depth of the class to class interactions that was needed for each piece of this game.  Building one class and using that for the next class and making sure each method and property could be functional between the classes is something I am happy to say is getting more evident and clear in my understanding.  
